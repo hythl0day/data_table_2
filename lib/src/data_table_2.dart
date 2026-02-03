@@ -601,14 +601,18 @@ class DataTable2 extends DataTable {
           onTap?.call();
           onRowTap?.call();
         },
-        onDoubleTap: () {
-          onDoubleTap?.call();
-          onRowDoubleTap?.call();
-        },
-        onLongPress: () {
-          onLongPress?.call();
-          onRowLongPress?.call();
-        },
+        onDoubleTap: ((onDoubleTap == null) && (onRowDoubleTap == null))
+            ? null
+            : () {
+                onDoubleTap?.call();
+                onRowDoubleTap?.call();
+              },
+        onLongPress: ((onLongPress == null) && (onRowLongPress == null))
+            ? null
+            : () {
+                onLongPress?.call();
+                onRowLongPress?.call();
+              },
         onTapDown: onTapDown,
         onTapCancel: onTapCancel,
         // Also add row level events to cells
