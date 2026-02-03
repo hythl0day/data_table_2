@@ -452,7 +452,7 @@ class DataTable2 extends DataTable {
       textDirection: numeric ? TextDirection.rtl : null,
       mainAxisAlignment: headingRowAlignment,
       children: <Widget>[
-        Flexible(child: label),
+        Expanded(child: label),
         if (onSort != null) ...<Widget>[
           customArrows ??
               _SortArrow(
@@ -894,7 +894,7 @@ class DataTable2 extends DataTable {
 
               var h = _buildHeadingCell(
                 context: context,
-                padding: padding,
+                padding: const EdgeInsets.all(0),
                 effectiveHeadingRowHeight: effectiveHeadingRowHeight,
                 label: column.label,
                 tooltip: column.tooltip,
